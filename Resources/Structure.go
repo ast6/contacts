@@ -1,12 +1,13 @@
 package Resources
 
 type User struct {
-	ID   int    `db:"id"`
-	Name string `db:"name"`
+	ID   int    `json:"id"`
+	Name string `json:"name"`
 }
 
 type AddContactRequest struct {
-	FirstName string `db:"FirstName"`
-	LastName  string `db:"LastName"`
-	Number    string `db:"Number"`
+	ID        int    `json:"id"`
+	FirstName string `json:"first_name"`
+	LastName  string `json:"last_name"`
+	Number    string `json:"number"`
 }
