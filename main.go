@@ -10,9 +10,12 @@ import (
 )
 
 func main() {
-	Resources.Migration() //create table
+	//Resources.Migration() //create table
 
 	router := mux.NewRouter()
-	router.HandleFunc("/add", Resources.Add).Methods("POST")
+	//router.HandleFunc("/add", Resources.Add).Methods("POST")
+	router.HandleFunc("/update", Resources.Update).Methods("POST")
+
 	log.Fatal(http.ListenAndServe(":8080", router))
+
 }

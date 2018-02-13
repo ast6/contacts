@@ -14,7 +14,7 @@ func Migration() {
 
 	defer db.Close()
 
-	_, err = db.Query("CREATE TABLE IF NOT EXISTS Users(ID INT NOT NULL AUTO_INCREMENT,	FirstName VARCHAR(255) NOT NULL, LastName VARCHAR(255),	Number VARCHAR(255),PRIMARY KEY (ID))")
+	_, err = db.Query("CREATE TABLE IF NOT EXISTS users(id INT NOT NULL AUTO_INCREMENT,	firstName VARCHAR(255) NOT NULL, lastName VARCHAR(255),	number VARCHAR(255),PRIMARY KEY (id))")
 	if err != nil {
 		fmt.Println(err)
 	}

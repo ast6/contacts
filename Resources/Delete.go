@@ -7,8 +7,8 @@ import (
 	"net/http"
 )
 
-func Add(w http.ResponseWriter, r *http.Request) {
-	Request := new(AddContactRequest)
+func Delete(w http.ResponseWriter, r *http.Request) {
+	Request := new(UserTableScheme)
 
 	if err := json.NewDecoder(r.Body).Decode(Request); err != nil {
 		fmt.Println(err)
@@ -21,10 +21,6 @@ func Add(w http.ResponseWriter, r *http.Request) {
 		fmt.Println(err)
 		return
 	}
-	//_, err =
-	fmt.Println(db.Exec("INSERT INTO Users (`FirstName`, `LastName`,`Number`) VALUES ($1,$2,$3)",
-		Request.FirstName,
-		Request.LastName,
-		Request.Number))
-
+	_, err = db.Exec("DELETE 	FROM users WHERE id=(?)",
+		Request.ID)
 }
