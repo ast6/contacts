@@ -15,6 +15,7 @@ func main() {
 	router := mux.NewRouter()
 	//router.HandleFunc("/add", Resources.Add).Methods("POST")
 	router.HandleFunc("/update", Resources.Update).Methods("POST")
+	router.HandleFunc("/delete", Resources.Delete).Methods("POST")
 
 	log.Fatal(http.ListenAndServe(":8080", router))
 
